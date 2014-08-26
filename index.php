@@ -60,9 +60,7 @@ if (isset($_GET['q'])) {
                         </div>
                     <?php
                     }            
-                } else {
-                    echo 'sorry there where no results';
-                }
+                } 
             ?>
            
         

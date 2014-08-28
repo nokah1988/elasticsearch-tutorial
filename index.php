@@ -36,7 +36,7 @@ if (isset($_GET['q'])) {
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Search | ES</title>
+        <title>Search | ElasticSearch</title>
         
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
@@ -54,12 +54,15 @@ if (isset($_GET['q'])) {
                     foreach ($results as $r) {
                     ?>
                         <div class="result">
-                            <a href="#<?php echo $r['_id'] ?>"><?php echo $r['_source']['title']; ?></a>
+                            <a href="#<?php echo $r['_id'] ?>"><?php echo $r['_source']['title']; ?></a> <br>
+                            <p><?php echo $r['_source']['body']; ?></p>
+                            
                             <div class="result-keywords"><?php echo implode(', ', $r['_source']['keywords']); ?></div>
-
                         </div>
                     <?php
                     }            
+                } else {
+                    echo 'there where no results';
                 } 
             ?>
            
